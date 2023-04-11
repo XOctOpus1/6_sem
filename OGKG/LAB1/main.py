@@ -1,5 +1,5 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 
 """
@@ -73,8 +73,32 @@ def localize_point(point, vertices, edges):
     return None
 
 
+
+
+def plot_graph(vertices, edges):
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    for v in vertices:
+        ax.plot(v[0], v[1], 'ro')
+
+    for e in edges:
+        ax.plot([vertices[e[0]][0], vertices[e[1]][0]],
+                [vertices[e[0]][1], vertices[e[1]][1]], 'b-')
+
+    plt.show()
+
+
+
+
 # приклад використання функцій для локалізації точки
 vertices = read_vertices(r'C:\Users\dd111\OneDrive\Documents\unic\3term\6_sem\OGKG\LAB1\vertices.txt')
 edges = read_edges(r'C:\Users\dd111\OneDrive\Documents\unic\3term\6_sem\OGKG\LAB1\edges.txt')
 point = np.array([10, 5])  # приклад координат точки
 print(localize_point(point, vertices, edges))
+plot_graph(vertices, edges)
+
+
+
+
+

@@ -75,9 +75,11 @@ def localize_point(point, vertices, edges):
 
 
 
-def plot_graph(vertices, edges):
+def plot_graph(vertices, edges, point):
     fig = plt.figure()
     ax = fig.add_subplot(111)
+
+    ax.plot(point[0],point[1], 'go')
 
     for v in vertices:
         ax.plot(v[0], v[1], 'ro')
@@ -94,9 +96,9 @@ def plot_graph(vertices, edges):
 # приклад використання функцій для локалізації точки
 vertices = read_vertices(r'C:\Users\dd111\OneDrive\Documents\unic\3term\6_sem\OGKG\LAB1\vertices.txt')
 edges = read_edges(r'C:\Users\dd111\OneDrive\Documents\unic\3term\6_sem\OGKG\LAB1\edges.txt')
-point = np.array([10, 5])  # приклад координат точки
+point = np.array([11, 2])  # приклад координат точки
 print(localize_point(point, vertices, edges))
-plot_graph(vertices, edges)
+plot_graph(vertices, edges,point)
 
 
 

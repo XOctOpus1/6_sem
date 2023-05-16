@@ -1,4 +1,3 @@
-import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -32,10 +31,8 @@ def razd_i_vlast(P):
 
 
 def main():
-    try:
-        N = int(sys.argv[1])
-    except:
-        N = int(input("Введіть кількість точок: "))
+
+    N = int(input("Введіть кількість точок: "))
 
     P = [(np.random.randint(0, 300), np.random.randint(0, 300)) for i in range(N)]
     L = razd_i_vlast(P)
@@ -46,7 +43,7 @@ def main():
     plt.plot(L[:, 0], L[:, 1], 'b-', picker=5)
     plt.plot([L[-1, 0], L[0, 0]], [L[-1, 1], L[0, 1]], 'b-', picker=5)
     plt.plot(P[:, 0], P[:, 1], ".r")
-    plt.axis('off')
+    plt.axis('on')
     plt.show()
 
 

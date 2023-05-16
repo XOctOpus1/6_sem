@@ -2,8 +2,8 @@ import telebot
 import openai
 import openpyxl
 
-bot = telebot.TeleBot('5985109471:AAGL845ixtZ_Ceotf7chGEq8eVEZ4WoVMe4')
-openai.api_key = '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'
+bot = telebot.TeleBot('')
+openai.api_key = ''
 
 WATCHING_LIST_FILE = 'database.xlsx'
 WATCHING_LIST_SHEET = 'watching_list'

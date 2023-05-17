@@ -1,9 +1,10 @@
 import telebot
 import openai
 import openpyxl
+import Tokens
 
-bot = telebot.TeleBot('')
-openai.api_key = ''
+bot = telebot.TeleBot(Tokens.Telegram_Bot_Token)
+openai.api_key = Tokens.Open_AI_Token
 
 WATCHING_LIST_FILE = 'database.xlsx'
 WATCHING_LIST_SHEET = 'watching_list'
